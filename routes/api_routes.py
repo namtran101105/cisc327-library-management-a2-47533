@@ -2,8 +2,14 @@
 API Routes - JSON API endpoints
 """
 
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from flask import Blueprint, jsonify, request
-from library_service import calculate_late_fee_for_book, search_books_in_catalog
+from services.library_service import calculate_late_fee_for_book, search_books_in_catalog
+
+
 
 api_bp = Blueprint('api', __name__, url_prefix='/api')
 
